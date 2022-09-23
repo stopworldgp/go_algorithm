@@ -1,7 +1,7 @@
 package search
 
-//二分查找
-func binarySearch(nums []int, target int) int {
+//BinarySearch 二分查找
+func BinarySearch(nums []int, target int) int {
 	left, right := 0, len(nums)-1
 	//0.left > right
 	for left <= right {
