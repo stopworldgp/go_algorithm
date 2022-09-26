@@ -1,6 +1,9 @@
 package sort
 
-import "math/rand"
+import (
+	"math/rand"
+	"time"
+)
 
 //QuickSort 快排算法
 func QuickSort(nums []int) []int {
@@ -20,6 +23,7 @@ func sort(nums []int, left, right int) {
 }
 
 func partition(nums []int, left, right int) int {
+	rand.Seed(time.Now().Unix())
 	pivot := left + rand.Intn(right-left)
 	pivotValue := nums[pivot]
 	for left <= right {
@@ -29,17 +33,13 @@ func partition(nums []int, left, right int) int {
 		for nums[right] > pivotValue {
 			right--
 		}
-		if left == right {
+		if left >= right {
 			break
 		}
 		//swap
-		if left < right {
-			tmp := nums[left]
-			nums[left] = nums[right]
-			nums[right] = tmp
-			left++
-			right--
-		}
+		nums[left], nums[right] = nums[right], nums[left]
+		left++
+		right--
 	}
 	//通过上述左右转移，right为左区最右侧下标
 	return right

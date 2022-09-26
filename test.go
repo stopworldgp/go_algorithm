@@ -1,13 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func t(nums []int) {
 	fmt.Println(nums[1])
 }
 
 func main() {
-
-	nums := []int{1, 2}
-	fmt.Println(nums[1:1])
+	rand.Seed(time.Now().Unix())
+	fmt.Println(rand.Intn(10))
 }
