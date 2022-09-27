@@ -23,6 +23,7 @@ func sort(nums []int, left, right int) {
 }
 
 func partition(nums []int, left, right int) int {
+	//如果尝试在每层递归都设置随机数种子，将会导致超时，因为这个操作太耗时了。我测试的结果，每次加时间戳种子的耗时是不加种子的452倍左右。
 	rand.Seed(time.Now().Unix())
 	pivot := left + rand.Intn(right-left)
 	pivotValue := nums[pivot]
