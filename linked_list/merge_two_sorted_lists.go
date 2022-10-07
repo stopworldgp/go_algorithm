@@ -1,10 +1,5 @@
 package linked_list
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 //MergeTwoLists 21. 合并两个有序链表-https://leetcode.cn/problems/merge-two-sorted-lists/
 func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	//0.建立虚拟头结点
